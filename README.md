@@ -14,20 +14,27 @@ ASN and IP list in China library.
 ## Features
 - Automatic daily updates
 - Reliable and accurate source
-
+- Including overseas business of Chinese companies
 ## Use in proxy app
 ### Surge
 ```
 [Rule]
-# > China ASN List
-RULE-SET, https://raw.githubusercontent.com/missuo/ASN-China/main/ASN.China.list, Direct
+# > China ASN IP List
+RULE-SET, https://cdn.jsdelivr.net/gh/vialib/ASN-China@main/IP.ASN.China.txt, Direct
 ```
 
-### Quantumult X
+### Clash
 ```
-[filter_remote]
-# China ASN List
-https://raw.githubusercontent.com/missuo/ASN-China/main/ASN.China.list, tag=ChinaASN, force-policy=direct, update-interval=86400, opt-parser=true, enabled=true
+rule-providers:
+  asn-cn:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/vialib/ASN-China@main/IP.ASN.China.yaml
+    path: "./rule_provider/IP.ASN.China.yaml"
+    interval: 86400
+
+rules:
+    - RULE-SET,asn-cn,DIRECT
 ```
 
 
