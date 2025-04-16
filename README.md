@@ -45,6 +45,9 @@ rules:
 ### IP Information
 - [cbuijs/ipasn](https://github.com/cbuijs/ipasn)
 
+### ASN-IP Information
+- [ipverse/asn-ip](https://github.com/ipverse/asn-ip)
+
 ## Author's ASN
 **[AS206729](https://bgp.he.net/AS206729)**
 
