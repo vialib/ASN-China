@@ -16,7 +16,7 @@ def convert_asn_to_ips(asn_list_file, output_file):
     for asn_entry in asn_list:
         asn = asn_entry.split(',')[1].strip()
         # Construct the URL and download the IP list corresponding to the ASN
-        url = f"https://raw.githubusercontent.com/ipverse/asn-ip/master/as/{asn}/aggregated.json"
+        url = f"https://raw.githubusercontent.com/ipverse/as-ip-blocks/master/as/{asn}/aggregated.json"
         response = requests.get(url)
         if response.status_code == 200:
             data = json.loads(response.text)
