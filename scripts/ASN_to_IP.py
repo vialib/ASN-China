@@ -20,8 +20,8 @@ def convert_asn_to_ips(asn_list_file, output_file):
         response = requests.get(url)
         if response.status_code == 200:
             data = json.loads(response.text)
-            ipv4_subnets = data['subnets']['ipv4']
-            ipv6_subnets = data['subnets']['ipv6']
+            ipv4_subnets = data['prefixes']['ipv4']
+            ipv6_subnets = data['prefixes']['ipv6']
             ip_list.extend(ipv4_subnets)
             ip_list.extend(ipv6_subnets)
 
